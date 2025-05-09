@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G2 Recargas | Recargas de Streaming</title>
+    <style>
+        /* --- Reset & Fonts --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f1a;
+            color: #fff;
+        }
+        
+        .header-logo {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* --- Header --- */
+        header {
+            background: linear-gradient(135deg, #6e00ff 0%, #ff00a0 100%);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- Plataformas --- */
+        .plataformas-container {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plataformas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .plataforma-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .plataforma-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .plataforma-card img {
+            width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .plataforma-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #ffcc00;
+        }
+
+        .btn-comprar {
+            background: linear-gradient(90deg, #6e00ff, #ff00a0);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-comprar:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- WhatsApp Float Button --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #0a0a12;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: #ffcc00;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .plataformas-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            .header-logo {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="https://imgur.com/PCyJk3m.jpg" alt="G2recargas" class="header-logo">
+        <p>As melhores recargas de streaming do mercado!</p>
+    </header>   
+
+    <!-- Plataformas -->
+    <div class="plataformas-container">
+        <h2 style="text-align: center; margin-bottom: 1rem;">ESCOLHA SUA PLATAFORMA</h2>
+        <div class="plataformas-grid">
+            <!-- Eppi Cinema -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/kOPPE0S.jpg" alt="Eppi Cinema">
+                <h3>Eppi Cinema</h3>
+                <p>R$ 23,00 Mês ou Pacote Anual R$ 140,00</p>
+                <button class="btn-comprar" onclick="comprar('Eppi Cinema')">COMPRAR AGORA</button>
+            </div>
+
+            <!-- ONpix -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/Hn4goKE.jpg" alt="ONpix">
+                <h3>ONpix</h3>
+                <p>R$ 25,00 Mês ou Pacote Anual R$ 150,00</p>
+                <button class="btn-comprar" onclick="comprar('ONpix')">COMPRAR AGORA</button>
+            </div>
+
+            <!-- Redplay -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/7C7zMAN.jpg" alt="Redplay">
+                <h3>Redplay</h3>
+                <p>R$ 25,00 Mês ou Pacote Anual R$ 150,00</p>
+                <button class="btn-comprar" onclick="comprar('Redplay')">COMPRAR AGORA</button>
+            </div>
+
+            <!-- TVExpress -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/EOJULkR.jpg" alt="TVExpress">
+                <h3>TVExpress</h3>
+                <p>R$ 25,00 Mês ou Pacote Anual R$ 150,00</p>
+                <button class="btn-comprar" onclick="comprar('TVExpress')">COMPRAR AGORA</button>
+            </div>
+
+            <!-- BLUE tv -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/dw7TOFe.jpg" alt="BLUE tv">
+                <h3>BLUE tv</h3>
+                <p>R$ 25,00 Mês ou Pacote Anual R$ 150,00</p>
+                <button class="btn-comprar" onclick="comprar('BLUE tv')">COMPRAR AGORA</button>
+            </div>
+
+            <!-- Duna tv -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/sg2veW5.jpg" alt="Duna tv">
+                <h3>Duna tv</h3>
+                <p>R$ 30,00 Mês ou Pacote Anual R$ 160,00</p>
+                <button class="btn-comprar" onclick="comprar('Duna tv')">COMPRAR AGORA</button>
+            </div>
+
+            <!-- UniTV -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/7GOxJah.jpg" alt="UniTV">
+                <h3>UniTV</h3>
+                <p>R$ 35,00 Mês ou Pacote Anual R$ 170,00</p>
+                <button class="btn-comprar" onclick="comprar('UniTV')">COMPRAR AGORA</button>
+            </div>
+
+            <!-- Nuvem Premium -->
+            <div class="plataforma-card">
+                <img src="https://i.imgur.com/wPA3636.jpg" alt="Nuvem Premium">
+                <h3>Nuvem Premium</h3>
+                <p>R$ 10,00 Mês ou Pacote Anual R$ 35,00</p>
+                <button class="btn-comprar" onclick="comprar('Nuvem Premium')">COMPRAR AGORA</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5541987207117?text=Olá,%20gostaria%20de%20comprar%20uma%20recarga!" class="whatsapp-float" target="_blank">
+        <i>📱</i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 G2 Recargas. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="https://wa.me/5541987207117" target="_blank">WhatsApp</a>
+        </div>
+    </footer>
+
+    <script>
+        // Função para comprar via WhatsApp
+        function comprar(plataforma) {
+            const numero = "5541987207117";
+            const mensagem = `Olá, gostaria de comprar uma recarga para *${plataforma}*!`;
+            window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
